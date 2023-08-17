@@ -1,0 +1,14 @@
+.output-header {
+  display: flex;
+  align-items:center;
+}
+
+.export {
+    margin-right: 0 !important;
+
+    background-color: #1976d2;
+}
+
+.row-count {
+  margin-right: 70px;
+}

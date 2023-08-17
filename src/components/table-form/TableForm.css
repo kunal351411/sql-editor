@@ -1,0 +1,33 @@
+.form-container {
+    margin: 20px 0;
+
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+}
+
+.form-control {
+    display: block;
+
+    height: 40px;
+    width: 100%;
+
+    font-size: 20px;
+}
+
+.form-group input::placeholder {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.submit{
+    width: 35%;
+
+    background-color: #1976D2;
+}

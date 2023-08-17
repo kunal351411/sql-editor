@@ -1,0 +1,30 @@
+.editor {
+  height: 260px !important;
+
+  counter-reset: line;
+
+  border: 2px solid #a39d9d !important;
+
+  overflow: scroll !important;
+}
+
+.editor #codeArea {
+  outline: none;
+  padding-left: 60px !important;
+}
+
+.editor pre {
+  padding-left: 60px !important;
+}
+
+.editor .editorLineNumber {
+  position: absolute;
+  left: 0px;
+  
+  width: 40px;
+
+  color: #757575;
+
+  text-align: right;
+  font-weight: 100;
+}
