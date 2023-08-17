@@ -18,7 +18,7 @@ export const App = () => {
   useEffect(() => {
     setSavedTablesState(savedTables);
     setSavedQueriesState(savedQueries);
-  }, []);
+  }, [setSavedQueriesState, setSavedTablesState]);
 
   return (
     <>
