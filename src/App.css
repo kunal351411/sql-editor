@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-    
+
   height: 715px;
 
   padding: 3vh 1.5vw 1vh 1.5vw;
@@ -20,10 +20,11 @@
 }
 
 .section-header {
-  font-family: 'Bungee Inline', cursive !important;
+  font-family: "Bungee Inline", cursive !important;
 }
 
-.left, .right {
+.left,
+.right {
   width: 25%;
 
   padding-right: 0;
@@ -33,16 +34,20 @@
   width: 50%;
 }
 
-.query, .saved-tables, .editor-container {
+.query,
+.saved-tables,
+.editor-container {
   height: 330px;
   width: 100%;
 
   margin-bottom: 30px;
 }
 
-.history, .add-table, .output-container {
+.history,
+.add-table,
+.output-container {
   height: 305px;
-  width: 100%
+  width: 100%;
 }
 
 .saved-tables {
@@ -60,16 +65,16 @@
 }
 
 .no-result {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 
-    color: #a6a6a6;
+  color: #a6a6a6;
 
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .btn-container {
@@ -103,9 +108,9 @@
 }
 
 .btn button:disabled {
-    cursor: unset;
-    
-    opacity: 0.5;
+  cursor: unset;
+
+  opacity: 0.5;
 }
 
 .btn button:disabled:hover {

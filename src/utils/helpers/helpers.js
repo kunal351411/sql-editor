@@ -1,5 +1,5 @@
-import alasql from 'alasql';
-import toast from 'react-hot-toast';
+import alasql from "alasql";
+import toast from "react-hot-toast";
 import { highlight, languages } from "prismjs/components/prism-core";
 import "prismjs/components/prism-clike";
 import "prismjs/components/prism-sql";
@@ -10,7 +10,6 @@ export const hightlightWithLineNumbers = (input) =>
     .split("\n")
     .map((line, i) => `<span class='editorLineNumber'>${i + 1}</span>${line}`)
     .join("\n");
-
 
 export const fetchTable = (query, savedTables) => {
   const tableName =
@@ -26,20 +25,17 @@ export const fetchTable = (query, savedTables) => {
 
 const saveCsvInLocalStorage = (tableName, csvData) => {
   localStorage.setItem(tableName, csvData);
-}
+};
 
 const getCsvFromLocalStorage = (tableName) => {
-  return localStorage.getItem(tableName)
-}
+  return localStorage.getItem(tableName);
+};
 
 export const getCsvData = (table) => {
-
-  if(table.name in localStorage) {
+  if (table.name in localStorage) {
     console.log("Getting Data from Local storage");
     return getCsvFromLocalStorage(table.name);
-  }
-
-  else {
+  } else {
     const csvData = fetch(table.link, {
       headers: {
         Accept: "application/json",
@@ -53,7 +49,9 @@ export const getCsvData = (table) => {
         }
       })
       .then((data) => {
-        const decodedData = decodeURIComponent(atob(data.content.replace("\n", "")));
+        const decodedData = decodeURIComponent(
+          atob(data.content.replace("\n", "")),
+        );
         saveCsvInLocalStorage(table.name, decodedData);
         console.log("Data stored in local storage");
         return decodedData;
@@ -62,12 +60,11 @@ export const getCsvData = (table) => {
         toast.error(e.message);
         return null;
       });
-      return csvData;
+    return csvData;
   }
-}
+};
 
 export const compileQueryOutput = (query) => {
-  
   const outputData = alasql
     .promise(query)
     .then((data) => {
@@ -78,15 +75,15 @@ export const compileQueryOutput = (query) => {
       return null;
     });
   return outputData;
-}
+};
 
 export const capitalizeString = (str) => {
   return str[0].toUpperCase() + str.slice(1);
-}
+};
 
 export const fetchOutputColumns = (outputEntry) => {
   return Object.keys(outputEntry);
-}
+};
 
 export const getTableRowsFromOutput = (output) => {
   const keys = fetchOutputColumns(output[0]);

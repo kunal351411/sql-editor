@@ -1,18 +1,18 @@
 .toolbar {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    height: 64px;
-    width: 100%;
+  height: 64px;
+  width: 100%;
 
-    color: white;
-    background-color: #1976d2;
+  color: white;
+  background-color: #1976d2;
 }
 
-.toolbar-text h5{
-    margin: 0;
-    margin-left: 5vw !important;
+.toolbar-text h5 {
+  margin: 0;
+  margin-left: 5vw !important;
 
-    font-size: 28px;
-    font-family: 'Russo One', sans-serif !important;
+  font-size: 28px;
+  font-family: "Russo One", sans-serif !important;
 }

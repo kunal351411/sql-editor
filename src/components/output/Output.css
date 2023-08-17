@@ -1,12 +1,12 @@
 .output-header {
   display: flex;
-  align-items:center;
+  align-items: center;
 }
 
 .export {
-    margin-right: 0 !important;
+  margin-right: 0 !important;
 
-    background-color: #1976d2;
+  background-color: #1976d2;
 }
 
 .row-count {
