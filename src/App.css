@@ -3,7 +3,8 @@
   flex-direction: column;
   flex-wrap: wrap;
 
-  height: 715px;
+  height: 100%;
+  min-height: 100vh;
 
   padding: 3vh 1.5vw 1vh 1.5vw;
 
