@@ -1,15 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, lazy, Suspense } from "react";
 import { useSetRecoilState } from "recoil";
 import Header from "./components/header/Header";
 import List from "./components/list/List";
 import AddTable from "./components/add-table/AddTable";
 import Editor from "./components/editor/Editor";
 import Output from "./components/output/Output";
-import ToastNotification from "./components/toast-notification/ToastNotification";
+import Loader from "./components/loader/Loader";
 import { savedQueriesState, savedTablesState } from "./state/atoms";
 import { savedQueries, savedTables } from "./utils/constants/constants";
-
 import "./App.css";
+
+const ToastNotification = lazy(() => import('./components/toast-notification/ToastNotification'))
 
 export const App = () => {
   const setSavedTablesState = useSetRecoilState(savedTablesState);
@@ -22,7 +23,9 @@ export const App = () => {
 
   return (
     <>
-      <ToastNotification />
+      <Suspense fallback={<Loader/>}>
+        <ToastNotification />
+      </Suspense>
       <Header />
       <div className="main-container">
         <div className="section left">

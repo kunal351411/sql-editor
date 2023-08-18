@@ -29,6 +29,12 @@
   font-weight: 100;
 }
 
+@media screen and (max-width: 1200px) {
+  .editor {
+    height: 150px !important;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .editor {
     height: 100px !important;

@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { useRecoilValue } from "recoil";
 import toast from "react-hot-toast";
 import { queryResultState } from "../../state/atoms";
@@ -7,8 +8,10 @@ import {
   capitalizeString,
   fetchOutputColumns,
 } from "../../utils/helpers/helpers";
-import Table from "../table/Table";
+import Loader from "../loader/Loader";
 import "./Output.css";
+
+const Table = lazy(() => import("../table/Table"));
 
 const Output = () => {
   const resultData = useRecoilValue(queryResultState);
@@ -49,16 +52,18 @@ const Output = () => {
         )}
       </div>
       <div className="table-container">
-        {!resultData.length ? (
-          <div className="no-result">
-            <h3>
-              <i className="fa fa-warning"></i>&emsp;
-              {`Run Some Query to See Output !!!`}
-            </h3>
-          </div>
-        ) : (
-          <Table />
-        )}
+        <Suspense fallback={<Loader />}>
+          {!resultData.length ? (
+            <div className="no-result">
+              <h3>
+                <i className="fa fa-warning"></i>&emsp;
+                {`Run Some Query to See Output !!!`}
+              </h3>
+            </div>
+          ) : (
+            <Table />
+          )}
+        </Suspense>
       </div>
     </>
   );

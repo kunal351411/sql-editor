@@ -1,6 +1,8 @@
-import { useState } from "react";
-import TableForm from "../table-form/TableForm";
+import { useState, lazy, Suspense } from "react";
+import Loader from "../loader/Loader";
 import "./AddTable.css";
+
+const TableForm = lazy(() => import("../table-form/TableForm"));
 
 const AddTable = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,9 +22,11 @@ const AddTable = () => {
           <i className={`fa fa-angle-${isOpen ? "up" : "down"}`}></i>
         </div>
       </div>
-      <div className={`accordion-content ${!isOpen ? "no-form" : ""}`}>
-        <TableForm openForm={setIsOpen} />
-      </div>
+      <Suspense fallback={<Loader/>}>
+          <div className={`accordion-content ${!isOpen ? "no-form" : ""}`}>
+            <TableForm openForm={setIsOpen} />
+          </div>
+      </Suspense>
     </div>
   );
 };

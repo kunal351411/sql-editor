@@ -75,11 +75,6 @@ h4 {
   z-index: 99;
 }
 
-/* .no-form {
-  visibility: hidden !important;
-} */
-
-
 @media screen and (max-width: 768px) {
   .accordion-title {
     flex-direction: column;

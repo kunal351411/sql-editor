@@ -39,7 +39,8 @@ td {
 
 @media screen and (max-width: 768px) {
   .output-table {
-    max-height: 200px; /* Adjust the maximum height for smaller screens */
+    height: auto;
+    max-height: 150px;
   }
 
   th,td {

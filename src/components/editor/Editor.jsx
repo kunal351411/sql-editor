@@ -41,6 +41,10 @@ const Editor = () => {
     const newQuery = {
       name: selectedQuery.trim(),
     };
+    if(!(newQuery.name.toLowerCase().includes("from"))) {
+      toast.error("Invalid query");
+      return;
+    }
     if (save) {
       saveQuery(newQuery);
     }
