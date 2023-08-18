@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'BungeeInlineRegular';
+    src: local('BungeeInlineRegular'), url('./BungeeInline-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'RussoOneRegular';
+    src: local('RussoOneRegular'), url('./RussoOne-Regular.ttf') format('truetype');
+}

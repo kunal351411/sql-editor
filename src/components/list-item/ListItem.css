@@ -52,6 +52,10 @@
   box-shadow: none;
 }
 
+.query .list-text, .history .list-text {
+  color: #1976d2;
+}
+
 @media screen and (max-width: 768px) {
   .list-text {
     width: 70%;

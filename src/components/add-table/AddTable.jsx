@@ -1,4 +1,5 @@
 import { useState, lazy, Suspense } from "react";
+import { FaAngleUp, FaAngleDown} from 'react-icons/fa';
 import Loader from "../loader/Loader";
 import "./AddTable.css";
 
@@ -19,7 +20,7 @@ const AddTable = () => {
             setIsOpen(!isOpen);
           }}
         >
-          <i className={`fa fa-angle-${isOpen ? "up" : "down"}`}></i>
+          {isOpen ? <FaAngleUp/> : <FaAngleDown/>}
         </div>
       </div>
       <div className={`accordion-content ${!isOpen ? "no-form" : ""}`}>

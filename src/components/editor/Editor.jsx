@@ -1,5 +1,6 @@
 import { useRecoilState, useSetRecoilState, useRecoilValue } from "recoil";
 import toast from "react-hot-toast";
+import{ FaEraser, FaRocket} from 'react-icons/fa';
 import {
   savedQueriesState,
   queryHistoryState,
@@ -105,7 +106,7 @@ const Editor = () => {
               disabled={selectedQuery === ""}
               onClick={() => runQuery(false)}
             >
-              Run&emsp;<i className="fa fa-rocket"></i>
+              Run&emsp;<FaRocket/>
             </button>
           </div>
           <div className="btn">
@@ -115,7 +116,7 @@ const Editor = () => {
               disabled={selectedQuery === ""}
               onClick={() => setSelectedQuery("")}
             >
-              <i className="fa fa-close"></i>&emsp;Clear
+              <FaEraser/>&emsp;Clear
             </button>
           </div>
         </div>

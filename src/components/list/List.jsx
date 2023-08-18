@@ -1,4 +1,5 @@
 import { useRecoilValue } from "recoil";
+import { FaBan } from "react-icons/fa";
 import ListItem from "../list-item/ListItem";
 import {
   savedTablesState,
@@ -32,7 +33,7 @@ const List = ({ type }) => {
         ) : (
           <div className="no-result">
             <h3>
-              <i className="fa fa-ban"></i>&emsp;
+              <FaBan/>&emsp;
               {`No ${type[0].toUpperCase() + type.slice(1)} Available`}
             </h3>
           </div>

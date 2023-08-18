@@ -1,5 +1,6 @@
 import { useSetRecoilState, useRecoilState } from "recoil";
 import toast from "react-hot-toast";
+import { FaTrash } from "react-icons/fa";
 import "./ListItem.css";
 import {
   savedTablesState,
@@ -49,7 +50,7 @@ const ListItem = ({ type, text, id, link = "" }) => {
         )}
       </div>
       <div className="delete-icon" onClick={deleteItem}>
-        <i className="fa fa-trash-o"></i>
+        <FaTrash/>
       </div>
     </div>
   );
