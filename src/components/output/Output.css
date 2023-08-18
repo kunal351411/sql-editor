@@ -12,3 +12,22 @@
 .row-count {
   margin-right: 70px;
 }
+
+@media screen and (max-width: 768px) {
+  
+  .row-count {
+    margin: 0 20px; /* Adjust margin for row count */
+  }
+
+
+  .export {
+    margin: 5vw !important; /* Reset margin for export button */
+  }
+}
+
+
+
+
+
+
+

@@ -28,3 +28,24 @@
   text-align: right;
   font-weight: 100;
 }
+
+@media screen and (max-width: 768px) {
+  .editor {
+    height: 100px !important;
+
+    margin-right: 5vw;
+  }
+
+  .editor #codeArea {
+    margin-right: 60px !important;
+}
+  
+  .editor #codeArea,
+  .editor pre {
+    padding-left: 30px !important;
+  }
+
+  .editor .editorLineNumber {
+    width: 20px;
+  }
+}

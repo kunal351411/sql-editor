@@ -19,3 +19,33 @@
 .save-run {
   background-color: #1976d2;
 }
+
+@media screen and (max-width: 768px) {
+  .editor-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-container {
+    justify-content: flex-start;
+  }
+
+  .btn {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+
+  .editor-body {
+    padding: 0 10px;
+  }
+
+  .clear {
+    margin-right: 10px !important;
+  }
+}
+
+
+
+
+
+

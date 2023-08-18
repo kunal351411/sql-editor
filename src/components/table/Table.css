@@ -36,3 +36,13 @@ td {
 
   white-space: nowrap;
 }
+
+@media screen and (max-width: 768px) {
+  .output-table {
+    max-height: 200px; /* Adjust the maximum height for smaller screens */
+  }
+
+  th,td {
+    padding: 5px;
+  }
+}

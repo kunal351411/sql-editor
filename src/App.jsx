@@ -24,7 +24,8 @@ export const App = () => {
     <>
       <ToastNotification />
       <Header />
-      <div className="section left">
+      <div className="main-container">
+        <div className="section left">
         <div className="saved-tables">
           <div className="section-header">
             <h3>Saved Tables</h3>
@@ -62,6 +63,7 @@ export const App = () => {
             <List type="history" />
           </div>
         </div>
+      </div>
       </div>
     </>
   );

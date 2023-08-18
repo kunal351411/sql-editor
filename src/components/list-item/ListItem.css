@@ -43,23 +43,37 @@
   color: black;
 }
 
-.saved-tables .list-text {
-  box-shadow: none;
-}
-
-.query .list-text,
-.history .list-text {
-  font-weight: 400;
-
-  color: #1976d2;
-}
-
-.query .list-text:active,
-.history .list-text:active {
-  transform: scale(0.98);
-}
-
 .saved-tables a {
   color: black;
   text-decoration: none;
 }
+
+.saved-tables .list-text {
+  box-shadow: none;
+}
+
+@media screen and (max-width: 768px) {
+  .list-text {
+    width: 70%;
+
+    padding: 1vh 2vw;
+
+    font-size: 14px;
+  }
+
+  .delete-icon {
+    right: 15%;
+  }
+
+  .query .list-text,
+  .history .list-text {
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .query .list-text:active,
+  .history .list-text:active {
+    transform: scale(0.98);
+  }
+}
+

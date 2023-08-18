@@ -51,6 +51,8 @@ h4 {
   border: hidden;
 
   transition: border 1s ease-in-out;
+
+  display: none;
 }
 
 .accordion-content {
@@ -58,7 +60,7 @@ h4 {
 
   width: 16vw;
 
-  max-height: 1000px;
+  max-height: 230px;
 
   overflow: hidden;
   visibility: visible;
@@ -73,6 +75,52 @@ h4 {
   z-index: 99;
 }
 
-.no-form {
+/* .no-form {
   visibility: hidden !important;
+} */
+
+
+@media screen and (max-width: 768px) {
+  .accordion-title {
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 100%;
+  }
+
+  .accordion-text {
+    width: 70%;
+
+    padding-left: 5vw;
+
+    box-sizing: border-box;
+
+    border-width: 1px 1px 0px 1px;
+    border-radius: 3px 3px 0 0;
+  }
+
+  .accordion-icon {
+    display: none;
+  }
+
+  .accordion-content {
+    width: 70%;
+
+    box-sizing: border-box;
+  }
+
+  .accordion-content.no-form {
+    max-height: 70%;
+
+    display: block;
+
+    border: 1px solid #1976d2;
+    border-width: 0px 1px 1px 1px;
+    border-radius: 0 0 3px 3px;
+  }
 }
+
+
+
+
+
