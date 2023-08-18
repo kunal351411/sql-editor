@@ -1,35 +1,38 @@
 .output-table {
-    height: 230px;
+  height: 230px;
 
-    overflow: scroll;
+  overflow: scroll;
 }
 
-table,th , td {
-    border: 1px solid #a39d9d;
-    border-collapse: collapse;
+table,
+th,
+td {
+  border: 1px solid #a39d9d;
+  border-collapse: collapse;
 }
 
-th, td {
-    padding: 15px;
+th,
+td {
+  padding: 15px;
 }
 
 .header th {
-    position: sticky;
-    top: 0;
+  position: sticky;
+  top: 0;
 
-    color: white;
-    background-color: rgb(42, 37, 37);
+  color: white;
+  background-color: rgb(42, 37, 37);
 
-    border: 1px solid #a39d9d;
+  border: 1px solid #a39d9d;
 
-    z-index: 9999;
+  z-index: 9999;
 }
 
 .row {
-    font-weight: 600;
+  font-weight: 600;
 
-    color: #3e4c59;
-    background-color: white;
+  color: #3e4c59;
+  background-color: white;
 
-    white-space: nowrap;
+  white-space: nowrap;
 }

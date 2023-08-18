@@ -1,6 +1,6 @@
 .editor-header {
   display: flex;
-  align-items:center;
+  align-items: center;
 }
 
 .clear {
@@ -10,12 +10,12 @@
 }
 
 .run {
-  color: #1976D2 !important;
+  color: #1976d2 !important;
   background-color: white;
 
-  border: 2px solid #1976D2 !important;
+  border: 2px solid #1976d2 !important;
 }
 
 .save-run {
-  background-color: #1976D2;
+  background-color: #1976d2;
 }

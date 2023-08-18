@@ -21,7 +21,6 @@ export const savedTables = [
   },
 ];
 
-
 export const savedQueries = [
   {
     name: "SELECT * FROM CUSTOMERS",

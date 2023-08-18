@@ -1,91 +1,124 @@
-import { useRecoilState, useSetRecoilState, useRecoilValue } from 'recoil';
-import toast from 'react-hot-toast';
-import { savedQueriesState, queryHistoryState, selectedQueryState, savedTablesState, queryResultState } from '../../state/atoms';
-import { fetchTable, getCsvData, compileQueryOutput } from '../../utils/helpers/helpers';
-import EditorBody from '../editor-body/EditorBody';
-import './Editor.css';
+import { useRecoilState, useSetRecoilState, useRecoilValue } from "recoil";
+import toast from "react-hot-toast";
+import {
+  savedQueriesState,
+  queryHistoryState,
+  selectedQueryState,
+  savedTablesState,
+  queryResultState,
+} from "../../state/atoms";
+import {
+  fetchTable,
+  getCsvData,
+  compileQueryOutput,
+} from "../../utils/helpers/helpers";
+import EditorBody from "../editor-body/EditorBody";
+import "./Editor.css";
 
 const Editor = () => {
-
-  const [ selectedQuery, setSelectedQuery ] = useRecoilState(selectedQueryState);
+  const [selectedQuery, setSelectedQuery] = useRecoilState(selectedQueryState);
   const setSavedQueriesState = useSetRecoilState(savedQueriesState);
   const setQueryHistoryState = useSetRecoilState(queryHistoryState);
   const setQueryResult = useSetRecoilState(queryResultState);
   const savedTables = useRecoilValue(savedTablesState);
 
   const saveQuery = (newQuery) => {
-    setSavedQueriesState((prevState) => {   
-        const isQueryAlreadyPresent = prevState.some(query => query.name === selectedQuery)
-        if(isQueryAlreadyPresent) {
-            toast.error('Query already exists');
-            return [...prevState];
-        }
-        else {
-            toast.success('Query saved successfully');
-            return [...prevState, newQuery];
-        }
+    setSavedQueriesState((prevState) => {
+      const isQueryAlreadyPresent = prevState.some(
+        (query) => query.name === selectedQuery,
+      );
+      if (isQueryAlreadyPresent) {
+        toast.error("Query already exists");
+        return [...prevState];
+      } else {
+        toast.success("Query saved successfully");
+        return [...prevState, newQuery];
+      }
     });
-  }
-  
-  const runQuery = async(save = false) => {
+  };
+
+  const runQuery = async (save = false) => {
     const newQuery = {
-        name: selectedQuery.trim()
-    }
-    if(save) {
-        saveQuery(newQuery);
+      name: selectedQuery.trim(),
+    };
+    if (save) {
+      saveQuery(newQuery);
     }
     const table = fetchTable(newQuery.name, savedTables);
-    if(table) {
-        const csvData = await getCsvData(table);
-        if(csvData) {
-            console.log(csvData);
-            const outputData = await compileQueryOutput(newQuery.name.replace(table.name, `CSV("${csvData}", {header: true, separator:','})`));
-            if(outputData) {
-                console.log(outputData);
-                toast.success('Query ran successfully');
-                setQueryResult(outputData);
-            }
-            else {
-                toast.error('Your query is invalid');
-                setQueryResult([]);
-            }
+    if (table) {
+      const csvData = await getCsvData(table);
+      if (csvData) {
+        console.log(csvData);
+        const outputData = await compileQueryOutput(
+          newQuery.name.replace(
+            table.name,
+            `CSV("${csvData}", {header: true, separator:','})`,
+          ),
+        );
+        if (outputData) {
+          console.log(outputData);
+          toast.success("Query ran successfully");
+          setQueryResult(outputData);
+        } else {
+          toast.error("Your query is invalid");
+          setQueryResult([]);
         }
-        else {
-            toast.error("CSV Link not working");
-            setQueryResult([]);
-        }
-    }
-    else {
-        toast.error('Table mentioned in query not available');
+      } else {
+        toast.error("CSV Link not working");
         setQueryResult([]);
+      }
+    } else {
+      toast.error("Table mentioned in query not available");
+      setQueryResult([]);
     }
 
-    setQueryHistoryState(prevState => [...prevState, newQuery]);
-  }
+    setQueryHistoryState((prevState) => [...prevState, newQuery]);
+  };
 
   return (
     <>
-        <div className='editor-header'>
-            <div className='section-header'>
-              <h3>Editor</h3>
-            </div>
-            <div className='btn-container'>
-              <div className='btn'>
-                <button type='button' className='save-run' disabled={selectedQuery === ''} onClick={() => runQuery(true)}>Save & Run</button>
-              </div>
-              <div className='btn'>
-                <button type='button' className='run' disabled={selectedQuery === ''} onClick={() => runQuery(false)} >Run&emsp;<i className="fa fa-rocket"></i></button>
-              </div>
-              <div className='btn'>
-                <button type='button' className='clear' disabled={selectedQuery === ''} onClick={() => setSelectedQuery('')}><i className="fa fa-close"></i>&emsp;Clear</button>
-              </div>
-            </div>
+      <div className="editor-header">
+        <div className="section-header">
+          <h3>Editor</h3>
         </div>
-        <div className='editor-body'>
-            <EditorBody/>
+        <div className="btn-container">
+          <div className="btn">
+            <button
+              type="button"
+              className="save-run"
+              disabled={selectedQuery === ""}
+              onClick={() => runQuery(true)}
+            >
+              Save & Run
+            </button>
+          </div>
+          <div className="btn">
+            <button
+              type="button"
+              className="run"
+              disabled={selectedQuery === ""}
+              onClick={() => runQuery(false)}
+            >
+              Run&emsp;<i className="fa fa-rocket"></i>
+            </button>
+          </div>
+          <div className="btn">
+            <button
+              type="button"
+              className="clear"
+              disabled={selectedQuery === ""}
+              onClick={() => setSelectedQuery("")}
+            >
+              <i className="fa fa-close"></i>&emsp;Clear
+            </button>
+          </div>
         </div>
+      </div>
+      <div className="editor-body">
+        <EditorBody />
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Editor
+export default Editor;

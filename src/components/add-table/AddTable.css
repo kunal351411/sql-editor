@@ -12,49 +12,49 @@
 }
 
 .accordion-text {
-  padding: 1vh 1vw; 
+  padding: 1vh 1vw;
 
   width: 16vw;
 
   color: #000;
   background-color: white;
 
-  font-family: 'Bungee Inline', cursive;
+  font-family: "Bungee Inline", cursive;
 
-  border: 1px solid #1976D2;
+  border: 1px solid #1976d2;
   border-radius: 3px;
 }
 
 .open {
-    border-width: 1px 1px 0px 1px;
-    border-radius: 3px 3px 0 0;
+  border-width: 1px 1px 0px 1px;
+  border-radius: 3px 3px 0 0;
 }
 
 h4 {
-    margin: 0;
+  margin: 0;
 }
 
 .accordion-icon {
-    position: absolute;
-    right: 2vw;
+  position: absolute;
+  right: 2vw;
 
-    font-size: 30px;
+  font-size: 30px;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .accordion-content.no-form {
   padding: 0 1vw;
 
   max-height: 0px;
-  
+
   border: hidden;
 
   transition: border 1s ease-in-out;
 }
 
 .accordion-content {
-  padding: 1vh 1vw; 
+  padding: 1vh 1vw;
 
   width: 16vw;
 
@@ -62,10 +62,10 @@ h4 {
 
   overflow: hidden;
   visibility: visible;
-  
+
   background: white;
 
-  border: 1px solid #1976D2;
+  border: 1px solid #1976d2;
   border-width: 0px 1px 1px 1px;
   border-radius: 0 0 3px 3px;
 

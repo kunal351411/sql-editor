@@ -1,8 +1,8 @@
-import { atom } from 'recoil';
+import { atom } from "recoil";
 
-export const savedTablesState = atom ({
-    key: 'savedTablesState',
-    default: []
+export const savedTablesState = atom({
+  key: "savedTablesState",
+  default: [],
 });
 
 export const savedQueriesState = atom({
@@ -17,7 +17,7 @@ export const queryHistoryState = atom({
 
 export const selectedQueryState = atom({
   key: "selectedQueryState",
-  default: '',
+  default: "",
 });
 
 export const queryResultState = atom({

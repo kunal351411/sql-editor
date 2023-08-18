@@ -1,7 +1,7 @@
 .form-container {
     margin: 0 0 5px 0;
 
-    width: 100%;
+  width: 100%;
 }
 
 .form-group {
@@ -20,21 +20,21 @@
 }
 
 .form-control {
-    display: block;
+  display: block;
 
     height: 30px;
     width: 100%;
 
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .form-group input::placeholder {
-    font-size: 14px;
-    font-weight: 400;
+  font-size: 14px;
+  font-weight: 400;
 }
 
-.submit{
-    width: 35%;
+.submit {
+  width: 35%;
 
-    background-color: #1976D2;
+  background-color: #1976d2;
 }
