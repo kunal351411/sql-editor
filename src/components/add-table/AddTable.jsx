@@ -22,11 +22,15 @@ const AddTable = () => {
           <i className={`fa fa-angle-${isOpen ? "up" : "down"}`}></i>
         </div>
       </div>
-      <Suspense fallback={<Loader/>}>
-          <div className={`accordion-content ${!isOpen ? "no-form" : ""}`}>
-            <TableForm openForm={setIsOpen} />
-          </div>
-      </Suspense>
+      <div className={`accordion-content ${!isOpen ? "no-form" : ""}`}>
+        {
+          isOpen && (
+            <Suspense fallback={<Loader/>}>
+              <TableForm openForm={setIsOpen} />
+            </Suspense>
+          )
+        }
+      </div>
     </div>
   );
 };

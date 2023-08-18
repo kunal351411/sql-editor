@@ -82,9 +82,11 @@ const Editor = () => {
   return (
     <>
       <div className="editor-header">
-        <div className="section-header">
-          <h3>Editor</h3>
-        </div>
+        <label for="codeArea">
+          <div className="section-header">
+            <h3>Editor</h3>
+          </div>
+        </label>
         <div className="btn-container">
           <div className="btn">
             <button
