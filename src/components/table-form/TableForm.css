@@ -1,21 +1,28 @@
 .form-container {
-    margin: 20px 0;
+    margin: 0 0 5px 0;
 
     width: 100%;
 }
 
 .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .form-group label {
     display: block;
+
+    margin-bottom: 10px;
+}
+
+.required::after {
+    content: "*";
+    color: red
 }
 
 .form-control {
     display: block;
 
-    height: 40px;
+    height: 30px;
     width: 100%;
 
     font-size: 20px;

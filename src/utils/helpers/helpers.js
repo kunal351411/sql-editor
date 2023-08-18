@@ -89,13 +89,13 @@ export const fetchOutputColumns = (outputEntry) => {
 }
 
 export const getTableRowsFromOutput = (output) => {
-  const keys = fetchOutputColumns(output[0]);
+  const columns = fetchOutputColumns(output[0]);
 
-  return output.map((row) => {
+  return output.map((row, i) => {
     return (
-      <tr>
-        {keys.map((key) => {
-          return <td>{row[key]}</td>;
+      <tr key={i}>
+        {columns.map((column, i) => {
+          return <td key={i} >{row[column]}</td>;
         })}
       </tr>
     );
@@ -103,11 +103,11 @@ export const getTableRowsFromOutput = (output) => {
 };
 
 export const getTableHeadFromOutput = (output) => {
-  const keys = fetchOutputColumns(output[0]);
+  const columns = fetchOutputColumns(output[0]);
   return (
     <tr>
-      {keys.map((key) => {
-        return <th>{capitalizeString(key)}</th>;
+      {columns.map((column, i) => {
+        return <th key={i} >{capitalizeString(column)}</th>;
       })}
     </tr>
   );

@@ -1,6 +1,6 @@
 import { useRecoilValue } from 'recoil';
 import { queryResultState } from '../../state/atoms';
-import { getTableHeadFromOutput, getTableRowsFromOutput } from '../../utils/helpers/helpers';
+import { getTableHeadFromOutput, getTableRowsFromOutput, fetchOutputColumns } from '../../utils/helpers/helpers';
 import './Table.css';
 
 const Table = () => {

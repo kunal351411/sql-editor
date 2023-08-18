@@ -53,10 +53,11 @@ const TableForm = ({openForm}) => {
     <div className='form-container' onSubmit={handleSubmit}>
       <form>
         <div className='form-group'>
-            <label>Table</label>
+            <label className='required'>Table Name</label>
             <input name="name" value={formData.name} onChange={handleInputChange} type='text' className='form-control' placeholder='Table Name' required/>
         </div>
         <div className='form-group'>
+            <label className='required'>CSV Link</label>
             <input name="link" value={formData.link} onChange={handleInputChange} type='text' className='form-control' placeholder='CSV Link' required/>
         </div>
         <div className='btn'>
