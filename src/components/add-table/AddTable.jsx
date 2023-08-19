@@ -1,17 +1,14 @@
-import { useState, useEffect, lazy, Suspense } from "react";
+import { useState, useEffect } from "react";
 import { FaAngleUp, FaAngleDown} from 'react-icons/fa';
-import Loader from "../loader/Loader";
+import TableForm from "../table-form/TableForm";
 import "./AddTable.css";
-
-const TableForm = lazy(() => import("../table-form/TableForm"));
 
 const AddTable = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    if(window.innerWidth < 768) {
-      setIsOpen(true)
-    }
+    if(window.innerWidth < 768) 
+      setIsOpen(true);
   }, []);
 
   return (
@@ -30,13 +27,7 @@ const AddTable = () => {
         </div>
       </div>
       <div className={`accordion-content ${!isOpen ? "no-form" : ""}`}>
-        {
-          isOpen && (
-            <Suspense fallback={<Loader/>}>
               <TableForm openForm={setIsOpen} />
-            </Suspense>
-          )
-        }
       </div>
     </div>
   );
