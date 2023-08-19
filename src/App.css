@@ -138,16 +138,11 @@
     overflow: scroll; 
   }
   .section {
-    min-height: 80vh;
+    min-height: 75vh;
 
     border-width: 0;
 
     padding: 1vh 1.5vw;
-  }
-
-  .left {
-    min-height: unset;
-    height: auto;
   }
 
   .left,
