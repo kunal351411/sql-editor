@@ -1,4 +1,4 @@
-import { useState, lazy, Suspense } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import { FaAngleUp, FaAngleDown} from 'react-icons/fa';
 import Loader from "../loader/Loader";
 import "./AddTable.css";
@@ -7,6 +7,12 @@ const TableForm = lazy(() => import("../table-form/TableForm"));
 
 const AddTable = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if(window.innerWidth < 768) {
+      setIsOpen(true)
+    }
+  }, []);
 
   return (
     <div className="accordion">
