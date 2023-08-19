@@ -77,7 +77,7 @@
   height: 100%;
   width: 100%;
 
-  color: #a6a6a6;
+  color: #475460;
 
   font-weight: 600;
 }
@@ -142,11 +142,16 @@
     overflow: scroll; 
   }
   .section {
-    min-height: 73vh;
+    min-height: 80vh;
 
     border-width: 0;
 
     padding: 1vh 1.5vw;
+  }
+
+  .left {
+    min-height: unset;
+    height: auto;
   }
 
   .left,
