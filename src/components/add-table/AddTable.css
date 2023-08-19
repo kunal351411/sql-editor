@@ -26,6 +26,10 @@
   border-radius: 3px;
 }
 
+.accordion-text h3 {
+  margin: 5px 0;
+}
+
 .open {
   border-width: 1px 1px 0px 1px;
   border-radius: 3px 3px 0 0;

@@ -15,7 +15,7 @@ const AddTable = () => {
     <div className="accordion">
       <div className="accordion-title">
         <div className={`accordion-text ${isOpen ? "open" : null}`}>
-          <h4>Add Table</h4>
+          <h3>Add Table</h3>
         </div>
         <div
           className="accordion-icon"
