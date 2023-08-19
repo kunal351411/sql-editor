@@ -19,7 +19,8 @@
   color: #000;
   background-color: white;
 
-  font-family: "BungeeInlineRegular", cursive;
+  font-family: "Segoe UI", cursive;
+  font-size: 22px !important;
 
   border: 1px solid #1976d2;
   border-radius: 3px;

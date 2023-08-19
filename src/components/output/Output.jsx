@@ -37,7 +37,7 @@ const Output = () => {
       <Suspense fallback={<Loader />}>
         <div className="output-header">
           <div className="section-header">
-            <h3>Output</h3>
+            <h2>Output</h2>
           </div>
 
           {resultData.length > 0 && (

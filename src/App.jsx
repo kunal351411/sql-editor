@@ -27,7 +27,7 @@ export const App = () => {
         <div className="section left">
         <div className="saved-tables">
           <div className="section-header">
-            <h3>Saved Tables</h3>
+            <h2>Saved Tables</h2>
           </div>
           <div className="list">
             <List type="table" />
@@ -48,7 +48,7 @@ export const App = () => {
       <div className="section right">
         <div className="query">
           <div className="section-header">
-            <h3>Saved Queries</h3>
+            <h2>Saved Queries</h2>
           </div>
           <div className="list">
             <List type="query" />
@@ -56,7 +56,7 @@ export const App = () => {
         </div>
         <div className="history">
           <div className="section-header">
-            <h3>History</h3>
+            <h2>History</h2>
           </div>
           <div className="list">
             <List type="history" />

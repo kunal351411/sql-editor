@@ -84,7 +84,7 @@ const Editor = () => {
       <div className="editor-header">
         <label for="codeArea">
           <div className="section-header">
-            <h3>Editor</h3>
+            <h2>Editor</h2>
           </div>
         </label>
         <div className="btn-container">
