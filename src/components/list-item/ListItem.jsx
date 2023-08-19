@@ -1,3 +1,4 @@
+import { memo, useMemo } from "react";
 import { useSetRecoilState, useRecoilState } from "recoil";
 import toast from "react-hot-toast";
 import { FaTrash } from "react-icons/fa";
@@ -8,7 +9,7 @@ import {
   queryHistoryState,
   selectedQueryState,
 } from "../../state/atoms";
-import { capitalizeString } from "../../utils/helpers/helpers";
+import { capitalizeString } from "../../utils/helpers/utilities";
 
 const ListItem = ({ type, text, id, link = "" }) => {
   let savedState;
@@ -26,22 +27,22 @@ const ListItem = ({ type, text, id, link = "" }) => {
       });
     });
     toast.success(`${capitalizeString(type)} deleted successfully!!`);
-  };
+  }
 
   const selectQuery = () => {
     setSelectedQuery(text);
     toast.success(`Query copied to editor`);
-  };
+  }
 
-  return (
+  const renderedListItem = useMemo(() => (
     <div className="container">
       <div
         className="list-text"
         onClick={
-          type !== "table" && selectedQuery !== text ? selectQuery : null
+          type !== 'table' && selectedQuery !== text ? selectQuery : null
         }
       >
-        {type === "table" ? (
+        {type === 'table' ? (
           <a href={link} target="_blank" rel="noreferrer">
             {text}
           </a>
@@ -53,7 +54,9 @@ const ListItem = ({ type, text, id, link = "" }) => {
         <FaTrash/>
       </div>
     </div>
-  );
+  ), [type, text, id, link, selectedQuery]);
+
+  return renderedListItem;
 };
 
-export default ListItem;
+export default memo(ListItem);

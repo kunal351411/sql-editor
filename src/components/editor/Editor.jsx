@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { useRecoilState, useSetRecoilState, useRecoilValue } from "recoil";
 import toast from "react-hot-toast";
 import{ FaEraser, FaRocket} from 'react-icons/fa';
@@ -12,7 +13,7 @@ import {
   fetchTable,
   getCsvData,
   compileQueryOutput,
-} from "../../utils/helpers/helpers";
+} from "../../utils/helpers/queryRelatedFunctions";
 import EditorBody from "../editor-body/EditorBody";
 import "./Editor.css";
 
@@ -128,4 +129,4 @@ const Editor = () => {
   );
 };
 
-export default Editor;
+export default memo(Editor);

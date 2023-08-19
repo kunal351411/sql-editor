@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useMemo } from "react";
 import { useRecoilValue } from "recoil";
 import { FaDownload, FaThumbtack } from "react-icons/fa";
 import toast from "react-hot-toast";
@@ -7,7 +7,7 @@ import { rowsCountState } from "../../state/selectors";
 import {
   capitalizeString,
   fetchOutputColumns,
-} from "../../utils/helpers/helpers";
+} from "../../utils/helpers/utilities";
 import Loader from "../loader/Loader";
 import "./Output.css";
 
@@ -22,13 +22,13 @@ const Output = () => {
   const resultData = useRecoilValue(queryResultState);
   const rowsCount = useRecoilValue(rowsCountState);
 
-  const getHeaders = () => {
+  const getHeaders = useMemo(() => {
     if (resultData.length)
       return fetchOutputColumns(resultData[0]).map((column) => ({
         label: capitalizeString(column),
         key: column,
       }));
-  };
+  }, [resultData]);
 
   return (
     <>

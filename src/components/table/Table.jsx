@@ -3,7 +3,7 @@ import { queryResultState } from "../../state/atoms";
 import {
   getTableHeadFromOutput,
   getTableRowsFromOutput,
-} from "../../utils/helpers/helpers";
+} from "../../utils/helpers/outputTableFunctions";
 import "./Table.css";
 
 const Table = () => {
