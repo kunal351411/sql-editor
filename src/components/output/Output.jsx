@@ -23,11 +23,13 @@ const Output = () => {
   const rowsCount = useRecoilValue(rowsCountState);
 
   const getHeaders = useMemo(() => {
-    if (resultData.length)
+    if (resultData.length) {
       return fetchOutputColumns(resultData[0]).map((column) => ({
         label: capitalizeString(column),
         key: column,
       }));
+    }
+    return [];
   }, [resultData]);
 
   return (
@@ -46,7 +48,7 @@ const Output = () => {
               <CSVLink
                 data={resultData}
                 filename={"result.csv"}
-                headers={getHeaders()}
+                headers={getHeaders}
                 onClick={() => toast.success("CSV exported successfully")}
               >
                 <div className="btn">

@@ -54,7 +54,6 @@ const Editor = () => {
     if (table) {
       const csvData = await getCsvData(table);
       if (csvData) {
-        console.log(csvData);
         const outputData = await compileQueryOutput(
           newQuery.name.replace(
             table.name,
@@ -62,7 +61,6 @@ const Editor = () => {
           ),
         );
         if (outputData) {
-          console.log(outputData);
           toast.success("Query ran successfully");
           setQueryResult(outputData);
         } else {
