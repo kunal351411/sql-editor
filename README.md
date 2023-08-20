@@ -79,10 +79,10 @@ I have used various performance metrics like FCP, LCP, CLS to determine page loa
     Another tool that I used was speedlab as it specifically provided page load time metric to quantify and see the improvements in the performance.
 
    ### Speedlab Report - Desktop
-   [!Speedlab-Desktop](src/assets/screenshots/sppedlab-desktop)
+   ![Speedlab-Desktop](src/assets/screenshots/speedlab-desktop)
 
    ### Speedlab Report - Mobile
-   [!Speedlab-Mobile](src/assets/screenshots/sppedlab-mobile)
+   ![Speedlab-Mobile](src/assets/screenshots/speedlab-mobile)
 
 
  3) PageSpeed Insights
