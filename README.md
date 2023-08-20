@@ -68,20 +68,20 @@ I have used various performance metrics like FCP, LCP, CLS to determine page loa
 1) Lighthouse Chrome Extension
    Lighthouse Chrome Extension is the tool that I used widely to test the performance and improve it from the given suggestions and blogs.
 
-   ### Lighthouse Report - Desktop
+   #### Lighthouse Report - Desktop
    ![Lighthouse-Desktop](/src/assets/screenshots/lighthouse-desktop)
 
-   ### Lighthouse Report - Mobile
+   #### Lighthouse Report - Mobile
    ![Lighthouse-Mobile](/src/assets/screenshots/lighthouse-mobile)
 
 
  2) BrowserStack - Sppedlab
     Another tool that I used was speedlab as it specifically provided page load time metric to quantify and see the improvements in the performance.
 
-   ### Speedlab Report - Desktop
+   #### Speedlab Report - Desktop
    ![Speedlab-Desktop](src/assets/screenshots/speedlab-desktop)
 
-   ### Speedlab Report - Mobile
+   #### Speedlab Report - Mobile
    ![Speedlab-Mobile](src/assets/screenshots/speedlab-mobile)
 
 
