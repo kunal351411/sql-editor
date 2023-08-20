@@ -9,12 +9,21 @@ const TableForm = ({openForm}) => {
         name: '',
         link: ''
     });
+    const [ isLinkCorrect, setIsLinkCorrect ] = useState(null);
 
     const setSavedTablesState = useSetRecoilState(savedTablesState);
 
     const handleInputChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
+
+        if(name === 'link')
+        {
+            if(/^(https?:\/\/)?api\.github\.com\/.*$/.test(value))
+                setIsLinkCorrect(true);
+            else
+                setIsLinkCorrect(false);
+        }
 
         setFormData(prevData => ({
             ...prevData,
@@ -58,10 +67,11 @@ const TableForm = ({openForm}) => {
         </div>
         <div className='form-group'>
             <label className='required'>CSV Link</label>
-            <input name="link" value={formData.link} onChange={handleInputChange} type='text' className='form-control' placeholder='CSV Link' required/>
+            <input name="link" value={formData.link} onChange={handleInputChange} type='text' className='form-control'  placeholder='CSV Link' required/>
+            <span className={isLinkCorrect !== null && (isLinkCorrect ? 'correct' : 'incorrect')}>{isLinkCorrect !== null && (isLinkCorrect ? 'o.k.' : 'x')}</span>
         </div>
         <div className='btn'>
-            <button disabled={formData.name === '' || formData.link === ''} className='submit' type='submit'>Add&emsp;+</button>
+            <button disabled={formData.name === '' || !isLinkCorrect} className='submit' type='submit'>Add&emsp;+</button>
         </div>
       </form>
     </div>
