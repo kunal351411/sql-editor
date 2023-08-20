@@ -51,7 +51,9 @@ const TableForm = ({openForm}) => {
                     name: '',
                     link: ''
                 });
-                openForm(false);
+                setIsLinkCorrect(null);
+                if(window.innerWidth > 768)
+                    openForm(false);
                 toast.success(`Table created`);
                 return [...prevState, newTable];
             }
