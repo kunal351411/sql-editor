@@ -47,9 +47,7 @@ const Editor = () => {
       toast.error("Invalid query");
       return;
     }
-    if (save) {
-      saveQuery(newQuery);
-    }
+
     const table = fetchTable(newQuery.name, savedTables);
     if (table) {
       const csvData = await getCsvData(table);
@@ -63,6 +61,9 @@ const Editor = () => {
         if (outputData) {
           toast.success("Query ran successfully");
           setQueryResult(outputData);
+          if (save) {
+            saveQuery(newQuery);
+          }
         } else {
           toast.error("Your query is invalid");
           setQueryResult([]);
