@@ -1,7 +1,7 @@
 # SQL Runner: A lightweight SQL Editor
 
 ## Introduction
-SQL Runner is a frontend only, SPA web application that provides users the ability to run their SQL queries on their CSV datasets that are loaded by providing Github API link of the hosted dataset and provides instant output in the form of table that can be exported as CSV file for later use. The app is freated using React, plain CSS and recoil for state management. It uses alasql, a lightweight browser based database to run the queries and give correct output. The user can run not only the already saved queries but also the new simple queries based on the tables available.
+SQL Runner is a frontend only, SPA web application that provides users the ability to run their SQL queries on their CSV datasets that are loaded by providing Github API link of the hosted dataset and provides instant output in the form of table that can be exported as CSV file for later use. The app is freated using React, plain CSS and recoil for state management. It uses alasql, a lightweight browser based database to run the queries and give correct output. The user can run not only the already saved queries but also the new simple queries based on the tables available. It also uses react virtualization to show only the rows within the viewport.
 
 ## Live Demo
 SQL Runner is hosted at Vercel. It can be accessed at ->  [SQL Runner](https://sql-editor-kunal.vercel.app/)
@@ -15,7 +15,8 @@ SQL Runner is hosted at Vercel. It can be accessed at ->  [SQL Runner](https://s
 6) User has access to saved queries available in the form of list.
 7) User can also see the history of queries run by the user whether valid or invalid.
 8) User can click on any of the query in Saved or Histor section and it gets pasted to the editor.
-9) The page is made responsive and functional on mobile screen using media queries and dynamic units - vh and vw.
+9) The output table has lot of in-built functionalities like Search, sorting, filtering etc. It also implements the concept of virtualization to render the rows     that are within the viewport only at a time.
+10) The page is made responsive and functional on mobile screen using media queries and dynamic units - vh and vw.
 
 ## Structure
 The page is made such that user can access all the functionality at one-stop without navigating to next page. Therefore the whole page is divided into 6 sections in general:- 
@@ -36,7 +37,8 @@ The page is made such that user can access all the functionality at one-stop wit
    stored in local storage for future reference and returned back to the app.
 *  The retrieved CSV data is used by alasql to run the given query and produce output. If the query is simple and valid, result in the form of JSON is produced 
    else not.
-*  The resulting JSOn is then rendered in the form of table which can be exported using export button
+*  The resulting JSOn is then rendered in the form of table which can be exported using export button.
+*  The table has in-built features of sorting, filtring and searching. It also implements virtualization for better performance in case of large number of rows.
 
 ##  Tech stack and Dependencies
 1) React - To build lightweight SPA
@@ -50,6 +52,8 @@ The page is made such that user can access all the functionality at one-stop wit
 8) react-csv - To convert JSON to CSV and export CSV file.
 9) react-icons - To display font awesome icons
 10) alasql - To run queries and produce correct results
+11) material-react-table - To render output in the form of table that has in-built search, sorting and filtering mechanisms. It also uses virtualization of rows
+12) material-ui and dependencies - To use material-react-table
 
 ## Data used 
 I have used and provided saved tables that have CSV data that was provided in the assignment doc. It can be accessed here -> [Data](https://github.com/graphql-compose/graphql-compose-examples/tree/master/examples/northwind/data/csv)
@@ -97,9 +101,12 @@ Before beginning the optimization, when I checked for performance on Lighthouse,
 3) I used various suggestions available in lighthouse report to individually reduce different metrics like FCP, LCP, CLS and TBT. For instnace, using fixed dimensions to prevent cummulative layout shift. doing so, I reduced the CLs from 0.125 to 0.002 considerably.
 4) Hosted the website on Vercel due to its renowned CDNs and caching benefits.
 5) Using minimal dependencies and UI kits to prevent large bundle size. like using react-simple-code-editor which is just 10.9kb instead of famous ACE (1.7MB) or Codemirror(760kb) code editor
+6) In order to render large number of rows, virtualization was required for better performance. But it was not to directly implement virtualization due to    
+   following challenges. Therefore, material-react-table had to be used which increased the bundle size and affected the performance metrics just a little but 
+   it was important in the long run and it also provided some better in-built features that would be loved by users.
 
 ## Challenges
-I tried using virtualization for rendering rows of the table by using react-windows and react-virtualized. But in react-window, horizontal scrolling was not avaiable and use of semantic table tags was not possible making it less accessible. Similarly, I tried using table of react-virtualized but it was ineffective and provided bad Ux experience as the cells of table were of fixed width and didn't fit the content and also horizontal scrolling was not possible. Thus to provide better accessibilty and User experience, I didn't use react-windowsor virtualized.
+I tried using virtualization for rendering rows of the table by using react-windows and react-virtualized. But in react-window, horizontal scrolling was not avaiable and use of semantic table tags was not possible making it less accessible. Similarly, I tried using table of react-virtualized but it was ineffective and provided bad Ux experience as the cells of table were of fixed width and didn't fit the content and also horizontal scrolling was not possible. Thus to provide better accessibilty and User experience, I didn't use react-windows or virtualized. Instead I used material-react-table to implement virtualization and also add in-built features to the table. Material-React-Table doesn't have any of the limitations mentioned above so it was the first choice.
 
 ## Future Scope
 * Allow User to visualize output data in form of charts and graphs using recharts.
