@@ -68,8 +68,8 @@ const TableForm = ({openForm}) => {
             <input name="name" value={formData.name} onChange={handleInputChange} type='text' className='form-control' placeholder='Table Name' required/>
         </div>
         <div className='form-group'>
-            <label className='required'>CSV Link</label>
-            <input name="link" value={formData.link} onChange={handleInputChange} type='text' className='form-control'  placeholder='CSV Link' required/>
+            <label className='required'>Github API Link of Your CSV</label>
+            <input name="link" value={formData.link} onChange={handleInputChange} type='text' className='form-control'  placeholder='Github API Link of Your CSV' required/>
             <span className={isLinkCorrect !== null ? (isLinkCorrect ? 'correct' : 'incorrect') : null}>{isLinkCorrect !== null && (isLinkCorrect ? 'o.k.' : 'x')}</span>
         </div>
         <div className='btn'>
