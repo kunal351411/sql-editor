@@ -1,9 +1,10 @@
 import React from 'react';
 import { useRecoilValue } from 'recoil';
-import { MaterialReactTable } from 'material-react-table';
 import { queryResultState } from '../../state/atoms';
 import { capitalizeString, fetchOutputColumns } from '../../utils/helpers/utilities';
 import './Table.css';
+
+const { default: MaterialReactTable} = await import('material-react-table');
 
 const Table = () => {
   const queryResult = useRecoilValue(queryResultState);
