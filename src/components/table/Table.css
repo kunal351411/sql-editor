@@ -4,46 +4,9 @@
   overflow: scroll;
 }
 
-table,
-th,
-td {
-  border: 1px solid #a39d9d;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  padding: 15px;
-}
-
-.header th {
-  position: sticky;
-  top: 0;
-
-  color: white;
-  background-color: rgb(42, 37, 37);
-
-  border: 1px solid #a39d9d;
-
-  z-index: 9999;
-}
-
-.row {
-  font-weight: 600;
-
-  color: #3e4c59;
-  background-color: white;
-
-  white-space: nowrap;
-}
-
 @media screen and (max-width: 768px) {
   .output-table {
     height: auto;
     max-height: 150px;
-  }
-
-  th,td {
-    padding: 5px;
   }
 }

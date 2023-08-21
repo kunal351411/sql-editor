@@ -70,7 +70,7 @@ const TableForm = ({openForm}) => {
         <div className='form-group'>
             <label className='required'>CSV Link</label>
             <input name="link" value={formData.link} onChange={handleInputChange} type='text' className='form-control'  placeholder='CSV Link' required/>
-            <span className={isLinkCorrect !== null && (isLinkCorrect ? 'correct' : 'incorrect')}>{isLinkCorrect !== null && (isLinkCorrect ? 'o.k.' : 'x')}</span>
+            <span className={isLinkCorrect !== null ? (isLinkCorrect ? 'correct' : 'incorrect') : null}>{isLinkCorrect !== null && (isLinkCorrect ? 'o.k.' : 'x')}</span>
         </div>
         <div className='btn'>
             <button disabled={formData.name === '' || !isLinkCorrect} className='submit' type='submit'>Add&emsp;+</button>
