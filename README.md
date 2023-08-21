@@ -102,11 +102,11 @@ Before beginning the optimization, when I checked for performance on Lighthouse,
 4) Hosted the website on Vercel due to its renowned CDNs and caching benefits.
 5) Using minimal dependencies and UI kits to prevent large bundle size. like using react-simple-code-editor which is just 10.9kb instead of famous ACE (1.7MB) or Codemirror(760kb) code editor
 6) In order to render large number of rows, virtualization was required for better performance. But it was not to directly implement virtualization due to    
-   following challenges. Therefore, material-react-table had to be used which increased the bundle size and affected the performance metrics to some extent but 
-   it was important in the long run.
+   following challenges. Therefore, material-react-table had to be used which increased the bundle size and affected the performance metrics just a little but 
+   it was important in the long run and it also provided some better in-built features that would be loved by users.
 
 ## Challenges
-I tried using virtualization for rendering rows of the table by using react-windows and react-virtualized. But in react-window, horizontal scrolling was not avaiable and use of semantic table tags was not possible making it less accessible. Similarly, I tried using table of react-virtualized but it was ineffective and provided bad Ux experience as the cells of table were of fixed width and didn't fit the content and also horizontal scrolling was not possible. Thus to provide better accessibilty and User experience, I didn't use react-windowsor virtualized.
+I tried using virtualization for rendering rows of the table by using react-windows and react-virtualized. But in react-window, horizontal scrolling was not avaiable and use of semantic table tags was not possible making it less accessible. Similarly, I tried using table of react-virtualized but it was ineffective and provided bad Ux experience as the cells of table were of fixed width and didn't fit the content and also horizontal scrolling was not possible. Thus to provide better accessibilty and User experience, I didn't use react-windows or virtualized. Instead I used material-react-table to implement virtualization and also add in-built features to the table. Material-React-Table doesn't have any of the limitations mentioned above so it was the first choice.
 
 ## Future Scope
 * Allow User to visualize output data in form of charts and graphs using recharts.
