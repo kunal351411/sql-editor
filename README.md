@@ -5,6 +5,7 @@ SQL Runner is a frontend only, SPA web application that provides users the abili
 
 ## Live Demo
 SQL Runner is hosted at Vercel. It can be accessed at ->  [SQL Runner](https://sql-editor-kunal.vercel.app/)
+For creating a new table, enter a valid github api link of your csv dataset in the Link field like [try this](https://api.github.com/repos/graphql-compose/graphql-compose-examples/contents/examples/northwind/data/csv/customers.csv)
 
 ## Features
 1) Editor with syntax highlighting for SQL.
